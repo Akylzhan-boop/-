@@ -1,0 +1,115 @@
+HTML
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<title>Атом құрылысы</title>
+
+<style>
+body {
+    font-family: Arial;
+    margin: 0;
+    background: linear-gradient(to right, #667eea, #764ba2);
+    color: white;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0,0,0,0.5);
+}
+
+section {
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    color: black;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 12px;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #764ba2;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #5a3d8a;
+}
+</style>
+
+</head>
+<body>
+
+<header>
+    <h1>⚛ Атом құрылысы</h1>
+    <p>Қарапайым түсіндірме + тест</p>
+</header>
+
+<section>
+
+<div class="card">
+<h2>Атом деген не?</h2>
+<p>Атом — заттың ең кіші бөлшегі. Ол ядродан және электрондардан тұрады.</p>
+</div>
+
+<div class="card">
+<h2>Протон</h2>
+<p>Оң зарядталған бөлшек. Ядро ішінде болады.</p>
+</div>
+
+<div class="card">
+<h2>Нейтрон</h2>
+<p>Заряды жоқ бөлшек. Ядро құрамында болады.</p>
+</div>
+
+<div class="card">
+<h2>Электрон</h2>
+<p>Теріс зарядталған бөлшек. Ядроны айналып жүреді.</p>
+</div>
+
+</section>
+
+<section>
+<div class="card">
+<h2>🧠 Тест</h2>
+
+<p>1. Протонның заряды қандай?</p>
+<button onclick="checkAnswer(1, 'a')">Оң</button>
+<button onclick="checkAnswer(1, 'b')">Теріс</button>
+
+<p>2. Электрон қайда орналасқан?</p>
+<button onclick="checkAnswer(2, 'a')">Ядро ішінде</button>
+<button onclick="checkAnswer(2, 'b')">Ядро айналасында</button>
+
+<p>3. Нейтронның заряды?</p>
+<button onclick="checkAnswer(3, 'a')">Бар</button>
+<button onclick="checkAnswer(3, 'b')">Жоқ</button>
+
+<p id="result"></p>
+
+</div>
+</section>
+
+<script>
+let score = 0;
+
+function checkAnswer(question, answer) {
+    if (question === 1 && answer === 'a') score++;
+    if (question === 2 && answer === 'b') score++;
+    if (question === 3 && answer === 'b') score++;
+
+    document.getElementById("result").innerHTML = 
+        "Сенің ұпайың: " + score + " / 3";
+}
+</script>
+
+</body>
+</html>
